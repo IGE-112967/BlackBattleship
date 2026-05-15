@@ -1,5 +1,12 @@
 # BlackBattleship
 
+## Páginas consultadas
+
+- Página principal do jogo: https://papergames.io/en/battleship
+- Página de criação de torneio: https://papergames.io/en/t/create-tournament
+- Página dos meus torneios: https://papergames.io/en/t/my-tournaments
+- Página RANKA / rankings: https://papergames.io/en/blog/ranka
+
 ## Membros do grupo
 
 - David Costa, nº 124423
@@ -7,10 +14,9 @@
 - João Nicolau, nº 111111
 - Maria Frade, nº 122477
 
-
 ## Product Backlog
 
-## Distribuição das User Stories por Membro
+### Distribuição das User Stories por Membro
 
 | Membro | Número | User Stories atribuídas |
 |---|---:|---|
@@ -21,114 +27,114 @@
 
 ### User Stories
 
-1. Como jogador, quero introduzir um nickname antes de iniciar o jogo, para poder ser identificado durante a partida.
+1. Como jogador, quero aceder à página principal do jogo Battleship, para poder iniciar uma partida de batalha naval online.
 
    Critérios de aceitação:
-   - O sistema deve permitir inserir um nickname.
-   - O nickname não deve estar vazio.
-   - Após inserir o nickname, o jogador deve conseguir avançar para a criação ou entrada numa partida.
+   - A página principal do jogo deve ser carregada corretamente.
+   - O título ou identificação do jogo Battleship deve estar visível.
+   - As opções principais de jogo devem estar disponíveis para o utilizador.
 
-2. Como jogador, quero consultar as instruções do jogo, para compreender as regras antes de começar a jogar.
-
-   Critérios de aceitação:
-   - Deve existir uma opção visível para aceder às instruções.
-   - As instruções devem explicar o funcionamento geral da batalha naval.
-   - O jogador deve conseguir voltar à página principal depois de consultar as instruções.
-
-3. Como jogador, quero criar uma nova partida, para poder iniciar um jogo de batalha naval.
+2. Como jogador, quero consultar as regras do jogo, para compreender como funciona a batalha naval antes de começar a jogar.
 
    Critérios de aceitação:
-   - O sistema deve permitir criar uma nova partida.
-   - Após criar a partida, o jogador deve ser encaminhado para a página do jogo.
-   - A partida criada deve ficar disponível para ser jogada.
+   - A página deve apresentar uma secção com as regras do jogo.
+   - As regras devem explicar que o jogo é por turnos.
+   - As regras devem indicar que o objetivo é afundar todos os navios do adversário.
 
-4. Como jogador, quero gerar um link de convite, para poder partilhar a partida com outro jogador.
-
-   Critérios de aceitação:
-   - O sistema deve gerar um link associado à partida criada.
-   - O link deve poder ser copiado ou partilhado.
-   - Outro jogador deve conseguir aceder à partida através desse link.
-
-5. Como jogador convidado, quero entrar numa partida através de um link, para poder jogar contra outro jogador.
+3. Como jogador, quero jogar com um amigo, para poder iniciar uma partida contra outro jogador conhecido.
 
    Critérios de aceitação:
-   - O link deve abrir a partida correta.
-   - O jogador convidado deve conseguir introduzir o seu nickname.
-   - Após entrar, o jogador deve ficar associado à partida.
+   - Deve existir uma opção para jogar com um amigo.
+   - Ao selecionar essa opção, o sistema deve iniciar o processo de criação de uma partida.
+   - A partida deve permitir a participação de outro jogador.
 
-6. Como jogador, quero jogar contra um robot, para poder testar o jogo sem depender de outro jogador.
+4. Como jogador, quero partilhar uma partida com outro jogador, para que outra pessoa consiga entrar no mesmo jogo.
+
+   Critérios de aceitação:
+   - O sistema deve permitir criar ou aceder a uma partida partilhável.
+   - O outro jogador deve conseguir aceder à partida através do mecanismo disponibilizado pelo site.
+   - A partida deve ficar disponível para ambos os jogadores.
+
+5. Como jogador, quero jogar contra um robot, para poder testar o jogo sem depender de outro jogador humano.
 
    Critérios de aceitação:
    - Deve existir uma opção para jogar contra um robot.
    - O jogo deve iniciar mesmo sem outro jogador humano.
-   - O robot deve realizar jogadas automaticamente.
+   - A partida contra o robot deve apresentar o tabuleiro de jogo.
 
-7. Como jogador, quero posicionar os meus navios no tabuleiro, para preparar a minha estratégia antes do início da partida.
-
-   Critérios de aceitação:
-   - O sistema deve permitir selecionar posições no tabuleiro.
-   - Os navios devem ser colocados apenas em posições válidas.
-   - O jogador deve receber feedback quando tentar fazer uma colocação inválida.
-
-8. Como jogador, quero confirmar a posição dos meus navios, para indicar que estou pronto para iniciar a partida.
+6. Como jogador, quero jogar online contra um jogador aleatório, para poder encontrar automaticamente um adversário.
 
    Critérios de aceitação:
-   - Deve existir uma opção para confirmar a configuração do tabuleiro.
-   - O sistema deve validar se todos os navios foram colocados.
-   - Após a confirmação, o jogador deve aguardar o início da partida ou o adversário.
+   - Deve existir uma opção para jogar online contra um jogador aleatório.
+   - O sistema deve iniciar o processo de procura ou entrada numa partida online.
+   - O jogador deve ser encaminhado para uma sessão de jogo ou sala de espera.
 
-9. Como jogador, quero atacar uma posição no tabuleiro adversário, para tentar atingir os navios do outro jogador.
-
-   Critérios de aceitação:
-   - O jogador deve conseguir selecionar uma célula do tabuleiro adversário.
-   - O sistema deve registar a jogada.
-   - O jogador não deve conseguir atacar a mesma posição mais do que uma vez.
-
-10. Como jogador, quero receber feedback após cada ataque, para saber se acertei, falhei ou afundei um navio.
+7. Como jogador, quero realizar um ataque no tabuleiro adversário, para tentar atingir os navios do oponente.
 
    Critérios de aceitação:
-   - O sistema deve indicar o resultado da jogada.
-   - O tabuleiro deve ser atualizado visualmente após o ataque.
-   - O jogador deve conseguir distinguir posições já atacadas.
+   - O sistema deve permitir selecionar uma posição válida no tabuleiro adversário.
+   - A jogada deve ser registada após o clique numa célula disponível.
+   - O estado do tabuleiro deve ser atualizado após a jogada.
 
-11. Como jogador, quero que o sistema controle os turnos da partida, para garantir que cada jogador joga apenas na sua vez.
+8. Como jogador, quero receber feedback após realizar uma jogada, para saber se o meu ataque acertou ou falhou.
 
    Critérios de aceitação:
-   - O sistema deve indicar de quem é a vez de jogar.
-   - O jogador não deve conseguir jogar fora do seu turno.
-   - Após uma jogada válida, o turno deve passar para o adversário.
+   - O sistema deve apresentar uma indicação visual ou textual após a jogada.
+   - O jogador deve conseguir distinguir uma jogada que acertou de uma jogada que falhou.
+   - O tabuleiro deve mostrar que a posição já foi atacada.
+
+9. Como jogador, quero impedir a repetição de uma jogada numa posição já atacada, para evitar jogadas inválidas durante a partida.
+
+   Critérios de aceitação:
+   - O sistema deve identificar posições que já foram atacadas.
+   - O jogador não deve conseguir repetir uma jogada numa célula já selecionada.
+   - O sistema deve apresentar feedback ou impedir a ação caso o jogador tente repetir a jogada.
+
+10. Como jogador, quero perceber quando é novamente a minha vez de jogar, para seguir corretamente o sistema de turnos.
+
+   Critérios de aceitação:
+   - O sistema deve indicar ou refletir visualmente o estado do turno.
+   - O jogador deve conseguir perceber quando pode realizar uma jogada.
+   - Após uma jogada válida, o estado da partida deve ser atualizado.
+
+11. Como jogador, quero beneficiar de uma jogada adicional quando acerto num navio, para continuar a atacar de acordo com as regras do jogo.
+
+   Critérios de aceitação:
+   - Quando o jogador acerta num navio, o sistema deve permitir nova jogada.
+   - O estado do tabuleiro deve manter o registo do acerto.
+   - A sequência da jogada deve respeitar as regras apresentadas no site.
 
 12. Como jogador, quero visualizar o estado atual da partida, para acompanhar a evolução do jogo.
 
    Critérios de aceitação:
-   - O sistema deve apresentar o meu tabuleiro.
-   - O sistema deve apresentar o tabuleiro adversário com as jogadas realizadas.
-   - O jogador deve conseguir perceber o progresso da partida.
+   - O sistema deve apresentar o tabuleiro do jogador.
+   - O sistema deve apresentar o tabuleiro adversário ou a área de ataques.
+   - O jogador deve conseguir perceber o progresso da partida através da interface.
 
 13. Como jogador, quero ser informado quando a partida termina, para saber se ganhei ou perdi.
 
    Critérios de aceitação:
-   - O sistema deve detetar quando todos os navios de um jogador foram afundados.
-   - Deve ser apresentada uma mensagem de vitória ou derrota.
-   - Após o fim da partida, não devem ser permitidas novas jogadas.
+   - O sistema deve detetar quando todos os navios de um jogador foram destruídos.
+   - Deve ser apresentada uma indicação de fim de jogo.
+   - Após o fim da partida, não devem ser permitidas novas jogadas nessa partida.
 
-14. Como jogador, quero poder iniciar uma nova partida após terminar um jogo, para continuar a jogar sem ter de procurar novamente a página inicial.
-
-   Critérios de aceitação:
-   - Deve existir uma opção para iniciar uma nova partida.
-   - O jogador deve conseguir regressar ao menu principal.
-   - O novo jogo deve começar sem depender do estado da partida anterior.
-
-15. Como organizador, quero criar ou participar em campeonatos, para permitir que vários jogadores compitam entre si.
+14. Como jogador, quero consultar a tabela de classificação diária, para acompanhar a posição dos jogadores no ranking.
 
    Critérios de aceitação:
-   - O sistema deve disponibilizar uma funcionalidade associada a campeonatos.
-   - Os jogadores devem conseguir participar numa competição organizada.
-   - O sistema deve apresentar informação relevante sobre o campeonato.
+   - A página deve apresentar uma leaderboard ou ranking diário.
+   - O jogador deve conseguir visualizar informação associada à classificação.
+   - A informação do ranking deve estar acessível a partir da página do jogo ou de uma página relacionada.
 
-16. Como jogador, quero visualizar mensagens de erro claras, para perceber o que aconteceu quando uma ação não é permitida.
+15. Como organizador, quero criar um torneio privado, para permitir que vários jogadores participem numa competição organizada.
 
    Critérios de aceitação:
-   - O sistema deve apresentar mensagens quando uma ação falha.
-   - As mensagens devem ser compreensíveis para o utilizador.
-   - O jogador deve conseguir corrigir a ação com base na mensagem apresentada.
+   - Deve existir uma opção para criar torneio.
+   - A página de criação de torneio deve estar acessível.
+   - O sistema deve indicar que o torneio pode ser partilhado com outros jogadores através de um link único.
+
+16. Como organizador, quero consultar os meus torneios, para acompanhar os torneios criados ou disponíveis.
+
+   Critérios de aceitação:
+   - Deve existir uma página ou opção para consultar os meus torneios.
+   - A página deve apresentar uma lista ou tabela de torneios.
+   - A página deve indicar informação como nome do torneio, jogo, número de participantes, estado ou data de criação.
