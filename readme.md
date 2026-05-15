@@ -10,6 +10,15 @@
 
 ## Product Backlog
 
+## Distribuição das User Stories por Membro
+
+| Membro | Número | User Stories atribuídas |
+|---|---:|---|
+| João Nicolau | 111111 | User Story 1, 2, 3 e 4 |
+| Gabriel Matos | 112967 | User Story 5, 6, 7 e 8 |
+| Maria Frade | 122477 | User Story 9, 10, 11 e 12 |
+| David Costa | 124423 | User Story 13, 14, 15 e 16 |
+
 ### User Stories
 
 1. Como jogador, quero introduzir um nickname antes de iniciar o jogo, para poder ser identificado durante a partida.
