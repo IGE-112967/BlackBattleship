@@ -215,6 +215,77 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "856edd52-78fd-43bb-8993-9d2507a6424b",
+    "name": "UserStoryTest12",
+    "commands": [{
+      "id": "2e30ee92-77a2-4215-9433-cda544cedf1f",
+      "comment": "",
+      "command": "open",
+      "target": "https://papergames.io/en/battleship",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "849172d4-179a-4ce2-b458-ecf597ac8119",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1012",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "85f2a403-0ba9-4d48-a7ce-7ef66434d9bd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w-100:nth-child(2) > .btn .flex-grow-1",
+      "targets": [
+        ["css=.w-100:nth-child(2) > .btn .flex-grow-1", "css:finder"],
+        ["xpath=//app-juicy-button[2]/button/span[2]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "41bd34e0-8fd1-42e4-a2a5-131f785499e9",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.w-100:nth-child(2) > .btn > .front",
+      "targets": [
+        ["css=.w-100:nth-child(2) > .btn > .front", "css:finder"],
+        ["xpath=//app-juicy-button[2]/button/span[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "afbab4c5-8395-49f7-88ad-cfa48b7c25da",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.w-100:nth-child(2) > .btn > .front",
+      "targets": [
+        ["css=.w-100:nth-child(2) > .btn > .front", "css:finder"],
+        ["xpath=//app-juicy-button[2]/button/span[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8263057d-2e31-429c-a62a-3baa8dce8844",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.weapon-button:nth-child(2) > img",
+      "targets": [
+        ["css=.weapon-button:nth-child(2) > img", "css:finder"],
+        ["xpath=//img[@alt='missile']", "xpath:img"],
+        ["xpath=//div[@id='player_weapons']/button[2]/img", "xpath:idRelative"],
+        ["xpath=//button[2]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "74802d14-e5b3-4f5d-b0db-70690b65bd13",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.weapon-button:nth-child(3)",
+      "targets": [
+        ["css=.weapon-button:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='player_weapons']/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"]
+      ],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "dd9485c0-f365-4ff9-addc-53fd95969e16",

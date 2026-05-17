@@ -57,13 +57,10 @@ public class BasePage {
     }
 
     public void waitBoard() {
-
-        $(".game-board, .board, table, td")
-                .shouldBe(visible, Duration.ofSeconds(20));
-
-        // espera animações do jogo pararem
-        $(".waves-container, svg.intersection")
-                .shouldBe(hidden, Duration.ofSeconds(15));
+        // espera o tabuleiro existir
+        $(".game-board, .board, table").shouldBe(visible, Duration.ofSeconds(20));
+        // espera pelo primeiro estado jogável aparecer
+        $(".cell-1-1, td, .cell").should(exist);
 
         sleep(1000);
     }
