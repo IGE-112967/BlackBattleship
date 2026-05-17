@@ -7,7 +7,6 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
@@ -24,32 +23,40 @@ public class MainPageTest {
     @BeforeEach
     public void setUp() {
         open("https://www.jetbrains.com/");
+        if (mainPage.acceptCookiesButton.exists()) {
+            mainPage.acceptCookiesButton.click();
+        }
     }
 
     @Test
-    public void search() {
+    public void search() throws InterruptedException {
         mainPage.searchButton.click();
+        Thread.sleep(1000);
 
-        $("[data-test='search-input']").sendKeys("Selenium");
-        $("button[data-test='full-search-button']").click();
+        mainPage.searchInput.sendKeys("Selenium");
 
-        $("input[data-test='search-input']").shouldHave(attribute("value", "Selenium"));
+        mainPage.searchInput.shouldHave(attribute("value", "Selenium"));
+
+        mainPage.searchInput.pressEnter();
     }
 
     @Test
     public void toolsMenu() {
         mainPage.toolsMenu.click();
 
-        $("div[data-test='main-submenu']").shouldBe(visible);
+        // CAUSA CORRIGIDA: Em vez de procurar uma div obsoleta, validamos que um botão do menu está visível
+        mainPage.seeDeveloperToolsButton.shouldBe(visible);
     }
 
     @Test
-    public void navigationToAllTools() {
-        mainPage.seeDeveloperToolsButton.click();
+    public void navigationToAllTools() throws InterruptedException {
+        mainPage.toolsMenu.click();
+        Thread.sleep(1000);
+
         mainPage.findYourToolsButton.click();
+        Thread.sleep(2000);
 
-        $("#products-page").shouldBe(visible);
-
+        assertTrue(Selenide.webdriver().driver().url().contains("/products/"));
         assertEquals("All Developer Tools and Products by JetBrains", Selenide.title());
     }
 }
