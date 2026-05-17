@@ -1,23 +1,19 @@
-package org.example.blackbattleship.blackbattleship;
+package org.example.blackbattleship;
 
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.*;
 
-/**
- * Page Object Class — US16: Estatísticas de Perfil.
- */
 public class UserStory16 {
+    public SelenideElement battleshipImage = $(".game-item:nth-child(1) .img-fluid");
+    public SelenideElement myTournamentsLink = $x("//span[contains(.,'My tournaments')]");
 
-    /** Avatar ou ícone de perfil do utilizador */
-    public SelenideElement profileAvatar =
-            $x("//*[contains(@class,'avatar') or contains(@class,'profile')]");
-
-    /** Painel com as estatísticas do jogador */
-    public SelenideElement statisticsPanel =
-            $x("//*[contains(text(),'Statistics') or contains(text(),'Games played')]");
-
-    /** Abre a página do jogo */
     public void openSite() {
-        open("https://papergames.io/en/battleship");
+        open("https://papergames.io/en/");
+    }
+
+    public void goToBattleship() throws InterruptedException {
+        battleshipImage.click();
+        Thread.sleep(1500);
+        executeJavaScript("window.scrollTo(0,0)");
     }
 }
