@@ -1,7 +1,6 @@
-package org.example.blackbattleship;
+package org.example;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
@@ -43,8 +42,6 @@ public class MainPageTest {
     @Test
     public void toolsMenu() {
         mainPage.toolsMenu.click();
-
-        // CAUSA CORRIGIDA: Em vez de procurar uma div obsoleta, validamos que um botão do menu está visível
         mainPage.seeDeveloperToolsButton.shouldBe(visible);
     }
 
@@ -56,7 +53,7 @@ public class MainPageTest {
         mainPage.findYourToolsButton.click();
         Thread.sleep(2000);
 
-        assertTrue(Selenide.webdriver().driver().url().contains("/products/"));
-        assertEquals("All Developer Tools and Products by JetBrains", Selenide.title());
+        assertTrue(webdriver().driver().url().contains("/products/"));
+        assertEquals("All Developer Tools and Products by JetBrains", title());
     }
 }
