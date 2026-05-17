@@ -5,7 +5,7 @@
   "url": "https://papergames.io/en/battleship",
   "tests": [{
     "id": "4ad122e6-bc51-41f8-b10c-96419a7a3084",
-    "name": "UserStoryTest2",
+    "name": "UserStoryTest10",
     "commands": [{
       "id": "0169b3db-8c82-49c4-a813-c68e5babcfcd",
       "comment": "",
@@ -96,7 +96,7 @@
     }]
   }, {
     "id": "e5763ac9-3083-434c-a77a-2d45c7258b43",
-    "name": "UserStoryTest1",
+    "name": "UserStoryTest9",
     "commands": [{
       "id": "774e15d4-c7f3-4854-87cd-190c4a80042c",
       "comment": "",
@@ -157,6 +157,61 @@
       "target": "css=.cell-3-3 .circle",
       "targets": [
         ["css=.cell-3-3 .circle", "css:finder"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "8f5a68d3-60f4-493d-a9f8-4e6f1fb906ba",
+    "name": "UserStoryTest11",
+    "commands": [{
+      "id": "9b0bb565-8d17-4975-a54d-b372295df9cb",
+      "comment": "",
+      "command": "open",
+      "target": "https://papergames.io/en/r/HwyhgO4nY",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8d0d5084-a315-4661-8ff9-2f37c720f584",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1048",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dc9a12b0-4cc2-4c5d-a4ca-0959a4b17b02",
+      "comment": "acertei",
+      "command": "click",
+      "target": "css=.scrollable-flex",
+      "targets": [
+        ["css=.scrollable-flex", "css:finder"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "76af463f-430e-4103-8e52-fc464446a20a",
+      "comment": "acertei",
+      "command": "click",
+      "target": "css=.hover",
+      "targets": [
+        ["css=.hover", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba4dd5d5-e850-4677-aca2-fc74634b419d",
+      "comment": "acertei",
+      "command": "click",
+      "target": "css=.hover",
+      "targets": [
+        ["css=.hover", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f08d07a-f3cf-4cef-8b83-5be1a5025c6c",
+      "comment": "acertei",
+      "command": "click",
+      "target": "css=.hover",
+      "targets": [
+        ["css=.hover", "css:finder"]
       ],
       "value": ""
     }]

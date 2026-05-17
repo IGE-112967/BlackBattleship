@@ -2,32 +2,69 @@ package org.example.blackbattleship;
 
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Condition.enabled;
+import java.time.Duration;
+
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class BasePage {
-    private final SelenideElement consentButton = $x("//p[contains(text(),'Consent')]");// popup cookies
-    private final SelenideElement nicknameInput = $("input[type='text']"); // nickname
-    private final SelenideElement playVsRobot = $x("//button[contains(.,'Play vs robot')]"); // botão jogar
-    private final SelenideElement continueButton = $x("//button[contains(.,'Continue')]");
 
-    /** Abre o jogo. */
+    private final SelenideElement consentButton =
+            $x("//button[contains(.,'Consent') or contains(.,'Accept')]");
+
+    private final SelenideElement nicknameInput =
+            $("input[type='text']");
+
+    private final SelenideElement playVsRobot =
+            $x("//button[contains(.,'Play vs robot')]");
+
+    private final SelenideElement continueButton =
+            $x("//button[contains(.,'Continue')]");
+
     public void openGame() {
         open("https://papergames.io/en/battleship");
     }
 
-    /** Faz setup inicial: cookies + nickname + iniciar jogo. */
     public void setupGame() {
-        // aceitar cookies
-        if (consentButton.shouldBe(visible).exists()) {
-            consentButton.click();
+
+        acceptCookiesIfPresent();   // 🔥 FIX REAL
+
+        playVsRobot
+                .shouldBe(visible, Duration.ofSeconds(15))
+                .click();
+
+        nicknameInput
+                .shouldBe(visible, Duration.ofSeconds(15))
+                .setValue("Player");
+
+        continueButton
+                .shouldBe(enabled, Duration.ofSeconds(15))
+                .click();
+
+        sleep(3000);
+    }
+
+    private void acceptCookiesIfPresent() {
+        try {
+            consentButton
+                    .shouldBe(visible, Duration.ofSeconds(5))
+                    .click();
+
+            consentButton.shouldBe(hidden, Duration.ofSeconds(10));
+
+        } catch (Exception ignored) {
         }
-        // iniciar jogo
-        playVsRobot.shouldBe(visible).click();
-        // inserir nickname
-        nicknameInput.shouldBe(visible).setValue("Player");
-        continueButton.shouldBe(visible).shouldBe(enabled).click();
-        sleep(2000);
+    }
+
+    public void waitBoard() {
+
+        $(".game-board, .board, table, td")
+                .shouldBe(visible, Duration.ofSeconds(20));
+
+        // espera animações do jogo pararem
+        $(".waves-container, svg.intersection")
+                .shouldBe(hidden, Duration.ofSeconds(15));
+
+        sleep(1000);
     }
 }

@@ -25,14 +25,14 @@ public class UserStory9Test {
     }
 
     @Test
-    public void UserStoryTest1_preventRepeatedMove() {
+    public void UserStoryTest9_preventRepeatedMove() {
 
         // primeira jogada
-        user.attack(3, 3);
+        user.attack(2, 3);
         String firstState = user.state(3, 3);
         sleep(2000);
         // tentativa de repetir jogada
-        user.attack(3, 3);
+        user.attack(2, 3);
         String secondState = user.state(3, 3);
         sleep(2000);
         assertEquals(firstState, secondState);

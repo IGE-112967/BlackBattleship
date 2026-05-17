@@ -5,7 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$;
 
 /**
- * Page Object Model da User Story 2.
+ * Page Object Model da User Story 10.
  *
  * Objetivo:
  * validar o sistema de turnos do jogo.

@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-/** Teste caixa preta da User Story 2.
+/** Teste caixa preta da User Story 10.
  * Como jogador, quero perceber quando é novamente a minha vez de jogar. */
 public class UserStory10Test {
 

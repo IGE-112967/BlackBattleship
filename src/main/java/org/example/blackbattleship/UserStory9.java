@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.$;
 
 /**
- * Page Object da User Story 1:
+ * Page Object da User Story 9:
  * impedir repetição de jogada numa célula já atacada.
  */
 public class UserStory9 {
