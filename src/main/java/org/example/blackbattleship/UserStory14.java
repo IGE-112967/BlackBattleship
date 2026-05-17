@@ -1,24 +1,21 @@
-package org.example.blackbattleship.blackbattleship;
+package org.example.blackbattleship;
 
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.*;
-import static jdk.internal.misc.ThreadFlock.open;
 
-/**
- * Page Object Class — US14: Tabela de Classificações (Leaderboard).
- */
 public class UserStory14 {
+    public SelenideElement battleshipThumbnail = $(".game-item:nth-child(1) .thumbnail");
+    public SelenideElement leaderboardSection = $x("//a[contains(@href,'leaderboard') or contains(.,'Leaderboard')]");
+    public SelenideElement rankingContent = $x("//table | //*[contains(@class,'leaderboard')]");
 
-    /** Link de navegação para o Leaderboard */
-    public SelenideElement leaderboardMenu =
-            $x("//a[contains(@href,'leaderboards') or contains(.,'Leaderboard')]");
-
-    /** Tabela de ranking dos jogadores */
-    public SelenideElement rankingTable =
-            $x("//table | //*[contains(@class,'leaderboard')]");
-
-    /** Abre a página do jogo */
     public void openSite() {
-        open("https://papergames.io/en/battleship");
+        open("https://papergames.io/en/");
+        executeJavaScript("window.scrollTo(0,0)");
+    }
+
+    public void goToBattleship() throws InterruptedException {
+        battleshipThumbnail.click();
+        Thread.sleep(1500);
+        executeJavaScript("window.scrollTo(0,0)");
     }
 }
