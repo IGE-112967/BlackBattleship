@@ -20,33 +20,52 @@ public class MainPageTest {
     }
 
     @BeforeEach
-    public void setUp() {
+    public void setUp() throws InterruptedException {
         open("https://www.jetbrains.com/");
-        $(".ch2-allow-all-btn").shouldBe(visible).click();
+        Thread.sleep(3000);
+
+        if ($(".ch2-allow-all-btn").is(visible)) {
+            $(".ch2-allow-all-btn").click();
+        }
+
+        Thread.sleep(3000);
     }
 
     @Test
-    public void search() {
+    public void search() throws InterruptedException {
         mainPage.searchButton.click();
+        Thread.sleep(1000);
 
         $("[data-test-id='search-input']").sendKeys("Selenium");
         $("[data-test-id='search-input']").click();
 
         $("input[data-test-id='search-input']").shouldHave(attribute("value", "Selenium"));
+
+        Thread.sleep(3000);
     }
 
     @Test
-    public void toolsMenu() {
+    public void toolsMenu() throws InterruptedException {
         mainPage.toolsMenu.click();
+        Thread.sleep(3000);
+
         $("div[data-test='main-submenu']").shouldBe(visible);
         $("body").shouldHave(text("JETBRAINS IDEs"));
+
+        Thread.sleep(3000);
     }
 
     @Test
-    public void navigationToAllTools() { //Teve de ser reajustada para todos os IDE's
+    public void navigationToAllTools() throws InterruptedException { //Teve de ser reajustada para todos os IDE's
         mainPage.toolsMenu.click();
+        Thread.sleep(3000);
+
         mainPage.allIdesButton.click();
+        Thread.sleep(3000);
+
         $("body").shouldHave(text("All IDEs"));
         assertTrue(Selenide.title().contains("IDEs"));
+
+        Thread.sleep(3000);
     }
 }
