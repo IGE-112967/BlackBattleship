@@ -1,40 +1,39 @@
-package org.example.blackbattleship;
+package org.example.blackbattleship.selenideSuiteUserStory9.tests;
 
 import com.codeborne.selenide.Configuration;
+import org.example.blackbattleship.selenideSuiteUserStory9.pages.GamePage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static com.codeborne.selenide.Selenide.sleep;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/**
- * Teste caixa preta:
- * impede repetição de jogada numa célula já atacada.
- */
 public class UserStory9Test {
 
-    private BasePage page;
-    private UserStory9 user;
+    private GamePage game;
 
     @BeforeEach
     public void setup() {
         Configuration.browserSize = "1280x800";
-        user = new UserStory9();
-        page = new BasePage();
-        page.openGame();
-        page.setupGame();
+
+        game = new GamePage();
+
+        game.openGame();
+        game.setupGame();
+        game.startGame();
     }
 
     @Test
-    public void UserStoryTest9_preventRepeatedMove() {
+    public void shouldPreventRepeatedMoveOnSameCell() {
 
-        // primeira jogada
-        user.attack(2, 3);
-        String firstState = user.state(3, 3);
-        sleep(2000);
-        // tentativa de repetir jogada
-        user.attack(2, 3);
-        String secondState = user.state(3, 3);
-        sleep(2000);
+        int row = 2;
+        int col = 3;
+
+        game.attack(row, col);
+        String firstState = game.getCellState(row, col);
+
+        game.attack(row, col);
+        String secondState = game.getCellState(row, col);
+
         assertEquals(firstState, secondState);
     }
 }

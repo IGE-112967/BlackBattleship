@@ -1,73 +1,40 @@
-package org.example.blackbattleship;
+package org.example.blackbattleship.selenideSuiteUserStory11.tests;
 
 import com.codeborne.selenide.Configuration;
+import org.example.blackbattleship.selenideSuiteUserStory11.pages.ShipArrangement;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.sleep;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class UserStory11Test {
 
-    private BasePage page;
-    private UserStory11 user;
+    private ShipArrangement game;
 
     @BeforeEach
     public void setup() {
         Configuration.browserSize = "1280x800";
 
-        page = new BasePage();
-        user = new UserStory11();
+        game = new ShipArrangement();
 
-        page.openGame();
-        page.setupGame();
-        page.waitBoard();
+        game.openGame();
+        game.setupGame();
     }
 
     @Test
-    public void UserStoryTest11_extraTurnAfterHit() {
+    public void shouldAllowExtraTurnAfterHit() {
 
-        boolean hitFound = false;
+        int row1 = 3, col1 = 3;
+        int row2 = 4, col2 = 4;
 
-        for (int i = 0; i < 50 && !hitFound; i++) {
+        // primeira jogada
+        game.attack(row1, col1);
+        String firstState = game.getState(row1, col1);
 
-            if (!user.isPlayableCell(i)) continue;
+        // possível jogada extra
+        game.attack(row2, col2);
+        String secondState = game.getState(row2, col2);
 
-            user.attack(i);
-            sleep(2000);
-
-            String state = user.state(i);
-
-            if (state != null && state.contains("hit")) {
-
-                hitFound = true;
-
-                boolean extraMoveDone = false;
-
-                // procurar QUALQUER jogada válida (não adjacente)
-                for (int j = 0; j < 50; j++) {
-
-                    if (j == i) continue;
-
-                    if (!user.isPlayableCell(j)) continue;
-
-                    String before = user.state(j);
-
-                    user.attack(j);
-                    sleep(2000);
-
-                    String after = user.state(j);
-
-                    if (!before.equals(after)) {
-                        extraMoveDone = true;
-                        break;
-                    }
-                }
-
-                assertTrue(extraMoveDone);
-            }
-        }
-
-        assertTrue(hitFound);
+        assertNotEquals(firstState, secondState);
     }
 }

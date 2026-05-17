@@ -1,43 +1,41 @@
-package org.example.blackbattleship;
+package org.example.blackbattleship.selenideSuiteUserStory12.tests;
 
 import com.codeborne.selenide.Configuration;
+import org.example.blackbattleship.selenideSuiteUserStory12.pages.GameStatePage;
+import org.example.blackbattleship.BasePage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/**
- * User Story 12:
- * visualizar estado da partida.
- */
 public class UserStory12Test {
 
-    private BasePage page;
-    private UserStory12 user;
+    private BasePage base;
+    private GameStatePage gameState;
 
     @BeforeEach
     public void setup() {
 
         Configuration.browserSize = "1280x800";
 
-        page = new BasePage();
-        user = new UserStory12();
+        base = new BasePage();
+        gameState = new GameStatePage();
 
-        page.openGame();
-        page.setupGame();
-        page.waitBoard();
+        base.openGame();
+        base.setupGame();
+        base.waitBoard();
     }
 
     @Test
-    public void UserStory12_viewGameState() {
+    public void shouldShowGameStateCorrectly() {
 
-        // 1. jogador vê tabuleiro dele
-        assertTrue(user.playerBoardVisible());
+        // 1. tabuleiro do jogador visível
+        assertTrue(gameState.isPlayerBoardVisible());
 
-        // 2. jogador vê tabuleiro adversário
-        assertTrue(user.enemyBoardVisible());
+        // 2. tabuleiro do adversário visível
+        assertTrue(gameState.isEnemyBoardVisible());
 
-        // 3. após interação, existe progresso visível
-        assertTrue(user.hasGameProgress());
+        // 3. existe progresso na UI (hits/misses/etc)
+        assertTrue(gameState.hasGameProgress());
     }
 }
