@@ -10,15 +10,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Teste caixa preta:
  * impede repetição de jogada numa célula já atacada.
  */
-public class UserStory1Test {
+public class UserStory9Test {
 
     private BasePage page;
-    private UserStory1 user;
+    private UserStory9 user;
 
     @BeforeEach
     public void setup() {
         Configuration.browserSize = "1280x800";
-        user = new UserStory1();
+        user = new UserStory9();
         page = new BasePage();
         page.openGame();
         page.setupGame();

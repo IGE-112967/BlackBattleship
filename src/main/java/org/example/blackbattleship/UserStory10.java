@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
  * Objetivo:
  * validar o sistema de turnos do jogo.
  */
-public class UserStory2 {
+public class UserStory10 {
 
     /**
      * Retorna uma célula do tabuleiro inimigo.

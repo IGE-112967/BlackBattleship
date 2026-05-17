@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
  * Page Object da User Story 1:
  * impedir repetição de jogada numa célula já atacada.
  */
-public class UserStory1 {
+public class UserStory9 {
 
     private final SelenideElement playVsRobotButton =
             $x("//button[contains(.,'Play vs robot')]");

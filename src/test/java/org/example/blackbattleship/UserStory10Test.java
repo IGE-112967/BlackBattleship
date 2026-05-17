@@ -10,16 +10,16 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 /** Teste caixa preta da User Story 2.
  * Como jogador, quero perceber quando é novamente a minha vez de jogar. */
-public class UserStory2Test {
+public class UserStory10Test {
 
     private BasePage page;
-    private UserStory2 user;
+    private UserStory10 user;
 
     @BeforeEach
     public void setup() {
         Configuration.browserSize = "1280x800";
         page = new BasePage();
-        user = new UserStory2();
+        user = new UserStory10();
         page.openGame();
         page.setupGame();
     }
