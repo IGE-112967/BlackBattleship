@@ -1,4 +1,4 @@
-package org.example.blackbattleship.selenideSuiteUserStory10.tests;
+package org.example.blackbattleship;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
