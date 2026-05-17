@@ -1,0 +1,87 @@
+{
+  "id": "5e3eee53-6825-47cc-ba57-13243f4a03e0",
+  "version": "2.0",
+  "name": "TestSuite_122477",
+  "url": "https://papergames.io/en/battleship",
+  "tests": [{
+    "id": "4ad122e6-bc51-41f8-b10c-96419a7a3084",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "e5763ac9-3083-434c-a77a-2d45c7258b43",
+    "name": "UserStoryTest1",
+    "commands": [{
+      "id": "774e15d4-c7f3-4854-87cd-190c4a80042c",
+      "comment": "",
+      "command": "open",
+      "target": "https://papergames.io/en/battleship",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7d51773f-0c76-4451-bb01-8bedf3dedc1e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1048",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eec05706-6952-4c46-aee4-96e41d53fca1",
+      "comment": "começar",
+      "command": "click",
+      "target": "css=.w-100:nth-child(2) > .btn .flex-grow-1",
+      "targets": [
+        ["css=.w-100:nth-child(2) > .btn .flex-grow-1", "css:finder"],
+        ["xpath=//app-juicy-button[2]/button/span[2]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "53a64837-d543-4c01-b68e-8f3844c940cc",
+      "comment": "acertei um barco",
+      "command": "click",
+      "target": "css=.target",
+      "targets": [
+        ["css=.target", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3b48889-bda2-42fa-9618-922c93b03db3",
+      "comment": "acertei agua",
+      "command": "click",
+      "target": "css=.hover",
+      "targets": [
+        ["css=.hover", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "20b17b87-84e9-494d-97a3-2887165dfa95",
+      "comment": "cliquei no barco queimado",
+      "command": "click",
+      "target": "css=.particle:nth-child(2)",
+      "targets": [
+        ["css=.particle:nth-child(2)", "css:finder"],
+        ["xpath=//table[@id='board_ai-1779035375701-mhfzxt']/tr[4]/td[3]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//td[3]/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a321e133-3247-4d12-9be6-8f33d7440449",
+      "comment": "cliquei na agua antes já acertada",
+      "command": "click",
+      "target": "css=.cell-3-3 .circle",
+      "targets": [
+        ["css=.cell-3-3 .circle", "css:finder"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "dd9485c0-f365-4ff9-addc-53fd95969e16",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4ad122e6-bc51-41f8-b10c-96419a7a3084"]
+  }],
+  "urls": ["https://papergames.io/"],
+  "plugins": []
+}
